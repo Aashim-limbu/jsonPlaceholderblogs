@@ -9,7 +9,7 @@ export function Posts() {
 	const posts = useLoaderData() as Post[];
 	return (
 		<div>
-			<h1 className="text-2xl font-bold mb-5">Post</h1>
+			<h1 className="text-5xl font-bold border-b-2 border-neutral-600 py-4 mb-5">Post</h1>
 			<div className="grid grid-cols-2 gap-4 w-full">
 				{posts.map((post) => (
 					<PostCard key={post.id} {...post} />

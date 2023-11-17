@@ -7,7 +7,7 @@ function Users() {
 	const navigate = useNavigate();
 	return (
 		<>
-			<h1 className="text-2xl font-bold mb-2">Users</h1>
+			<h1 className="text-5xl font-bold border-b-2 border-neutral-600 mb-4 py-4">Users</h1>
 			<div className="grid grid-cols-2 gap-4">
 				{comments.map(({ id, name, website, email, company }: User) => (
 					<div className="flex flex-col bg-white" key={id}>
