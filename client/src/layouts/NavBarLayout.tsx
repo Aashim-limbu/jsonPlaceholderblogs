@@ -6,10 +6,10 @@ export function NavBarLayout() {
 	const { state } = useNavigation();
     newtonsCradle.register()
 	return (
-		<>
+		<div className="flex flex-col min-h-screen">
 			<NavBar />
 			<ScrollRestoration />
-			<div className=" bg-slate-200 p-5 ">
+			<div className="flex-1 bg-neutral-200 p-5">
 				{state === "loading" ? (
 					<div className="flex items-center justify-center h-screen">
 						<l-newtons-cradle
@@ -22,6 +22,6 @@ export function NavBarLayout() {
 					<Outlet />
 				)}
 			</div>
-		</>
+		</div>
 	);
 }

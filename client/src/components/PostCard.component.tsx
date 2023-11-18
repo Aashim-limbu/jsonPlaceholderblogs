@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Post } from "../interface/Posts";
 import Button from "./Button";
 export function PostCard({ id, title, body }: Post) {
@@ -11,11 +11,9 @@ export function PostCard({ id, title, body }: Post) {
 			<div className="p-4 grid ">
 				<div className="grid">
 					<div className="justify-self-end">
-                        <Link to={`/posts/${id}`}>
-						<Button>
-							View
-						</Button>
-                        </Link>
+						<Link to={`/posts/${id}`}>
+							<Button>View</Button>
+						</Link>
 					</div>
 				</div>
 			</div>
