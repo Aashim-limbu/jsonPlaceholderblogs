@@ -10,7 +10,7 @@ export function NewTodoForm() {
 			<div className="flex gap-4 flex-col w-2/3">
 				<Inputs name="newTodo" type="text" label="New Todo" />
 				<div className="flex gap-x-3 ml-auto">
-                    <Link to="/todos">
+                    <Link to=".." relative="path">
 					<SecondaryButton type="button">Back</SecondaryButton>
                     </Link>
 					<Button disabled={isSubmitting} type="submit">{isSubmitting ? "Loading" : "Create"}</Button>

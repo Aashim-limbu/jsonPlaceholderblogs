@@ -6,6 +6,6 @@ export function getPosts(options: Signal): Promise<Post[]> {
 		.get("/posts", {...options})
 		.then((res) => res.data);
 }
-export function getUserPosts(options :Signal,id:string|undefined):Promise<Post>{
+export function getUserPosts(options :Signal,id:string|undefined|FormDataEntryValue):Promise<Post>{
 return baseURL.get(`/posts/${id}`,{...options}).then(res=>res.data)
 }

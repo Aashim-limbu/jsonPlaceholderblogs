@@ -6,7 +6,7 @@ const NavBarElement = [
 ];
 export function NavBar() {
 	return (
-		<ul className="flex min-h-full sticky top-0 bg-teal-800 p-3 text-white text-xl justify-end gap-x-5 z-10">
+		<ul className="flex min-h-full sticky top-0 bg-teal-800 p-3 text-white text-xl justify-end gap-x-5 z-30">
 			{NavBarElement.map(({ name, title }, index) => (
 				<li key={index} className="hover:underline">
 					<NavLink

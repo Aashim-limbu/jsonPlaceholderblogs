@@ -23,7 +23,7 @@ export function Todos() {
 		<div>
 			<div className="flex mb-7 justify-between py-2 border-b-2 border-neutral-600">
 				<h1 className="text-5xl font-bold">Todos</h1>
-				<Link to="/new">
+				<Link to="/todos/new">
 					<Button type="button">New</Button>
 				</Link>
 			</div>
