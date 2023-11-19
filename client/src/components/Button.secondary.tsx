@@ -1,8 +1,10 @@
+import { ComponentProps } from "react";
+
 type ButtonTypes = {
 	children: React.ReactNode;
 	className?: string;
 	type: string;
-};
+} & ComponentProps<"button">;
 export function SecondaryButton({
 	children,
 	className,
