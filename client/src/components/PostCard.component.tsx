@@ -12,7 +12,7 @@ export function PostCard({ id, title, body }: Post) {
 				<div className="grid">
 					<div className="justify-self-end">
 						<Link to={`/posts/${id}`}>
-							<Button>View</Button>
+							<Button type="button">View</Button>
 						</Link>
 					</div>
 				</div>

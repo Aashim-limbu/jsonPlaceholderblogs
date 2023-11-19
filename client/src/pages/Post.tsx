@@ -1,4 +1,9 @@
-import { LoaderFunctionArgs, Outlet, useLoaderData } from "react-router-dom";
+import {
+	Link,
+	LoaderFunctionArgs,
+	Outlet,
+	useLoaderData,
+} from "react-router-dom";
 import { getPosts } from "../api/getPosts";
 import { Post } from "../interface/Posts";
 import { PostCard } from "../components/index";
@@ -14,18 +19,21 @@ type ResponseType = {
 };
 
 export type ContextType = {
-    users:User[]
-    filterQuery?:string
-}
-export const UserContext = createContext<ContextType>({users:[]});
+	users: User[];
+	filterQuery?: string;
+};
+export const UserContext = createContext<ContextType>({ users: [] });
 export function Posts() {
-	const { posts, users, filterQuery } = useLoaderData () as ResponseType ;
+	const { posts, users, filterQuery }: ResponseType =
+		useLoaderData() as ResponseType;
 	return (
-		<UserContext.Provider value={{users , filterQuery}}>
+		<UserContext.Provider value={{ users, filterQuery }}>
 			<div>
 				<h1 className="text-5xl flex justify-between w-full font-bold border-b-2 border-neutral-600 py-4 mb-5">
 					<span>Post</span>
-					<SecondaryButton type="button">New</SecondaryButton>
+					<Link to="new">
+						<SecondaryButton type="button">New</SecondaryButton>
+					</Link>
 				</h1>
 				<div className="my-4 flex w-full">
 					<FilterComponent />
