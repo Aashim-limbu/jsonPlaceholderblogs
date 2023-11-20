@@ -6,6 +6,7 @@ import { User } from "../interface/User.interface";
 import { getComment } from "../api/getComments";
 import { getUser } from "../api/getUsers";
 import { CommentCard } from ".";
+import { SecondaryButton } from "./Button.secondary";
 type ResponseType = {
 	post: Post;
 	comments: Comment[];
@@ -19,17 +20,24 @@ function ExpandPost() {
 			<h2 className="text-2xl font-semibold py-4 border-slate-500 border-b-2">
 				{post.title}
 			</h2>
-			<h3 className="text-xl py-2">
-				By-{" "}
-				<Link className="text-cyan-600 underline" to={`/users/${user.id}`}>
-					{user.name}
+			<div className="flex justify-between">
+				<h3 className="text-xl py-2">
+					By-{" "}
+					<Link className="text-cyan-600 underline" to={`/users/${user.id}`}>
+						{user.name}
+					</Link>
+				</h3>
+				<Link to="edit">
+					<SecondaryButton type="button">Edit</SecondaryButton>
 				</Link>
-			</h3>
+			</div>
 			<p className="text-xl">{post.body}</p>
 			<h3 className="text-xl font-bold my-3">Comments</h3>
 			<div className="flex flex-col gap-y-4">
 				{comments.map((comment) => (
-					<CommentCard key={comment.id} Comment={comment} />
+                    <div key={comment.id} >
+                        <CommentCard Comment={comment} />
+                    </div>
 				))}
 			</div>
 		</div>
