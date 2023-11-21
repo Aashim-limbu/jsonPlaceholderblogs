@@ -5,15 +5,17 @@ type SelectProps = {
 	label: string;
 	options: User[];
 	className?: string;
-	id?: string;
+	id?: number;
 	name?: string;
 	postId?: number;
+    userId?:number
 } & ComponentProps<"select">;
 export default function Select({
 	id,
 	postId,
 	name,
 	label,
+    userId,
 	options,
 	className,
 	...otherProps
@@ -29,10 +31,11 @@ export default function Select({
 			<select
 				id={id}
 				name={name}
-				defaultValue={postId}
+				defaultValue={userId}
 				className="mt-2 bg-white block w-full rounded-md border-0 py-2 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
 				{...otherProps}
 			>
+                <option value="">Select Author</option>
 				{options.map((option) => (
 					<option key={option.id} value={option.id}>
 						{" "}

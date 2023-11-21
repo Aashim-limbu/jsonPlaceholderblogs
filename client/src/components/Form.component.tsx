@@ -23,7 +23,7 @@ function FormElement({ users, posts, method }: ResponseType){
 						label="Author"
 						name="postAuthor"
 						id="author"
-                        postId={posts?.id}
+                        postId={posts?.userId}
 						options={users}
 					/>
 				</div>

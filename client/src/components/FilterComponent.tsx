@@ -6,7 +6,7 @@ import { useContext } from "react";
 import Select from "./Select";
 
 export function FilterComponent() {
-	const { users, filterQuery } = useContext(UserContext);
+	const { users, filterQuery,userId } = useContext(UserContext);
 	return (
 		<Form method="get" className="flex items-center w-full gap-x-4  justify-between">
 			<Inputs
@@ -16,7 +16,7 @@ export function FilterComponent() {
 				type="search"
 				label="Query"
 			/>
-			<Select className="flex items-center" label="Authors" options={users} />
+			<Select className="flex items-center" userId={userId} label="Authors" name="filterAuthor" options={users} />
 			<SecondaryButton type="submit">Filter</SecondaryButton>
 		</Form>
 	);

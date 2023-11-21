@@ -29,7 +29,8 @@ async function action({request,params:{postId}}:ActionFunctionArgs){
     const formData = await request.formData()
     const title = formData.get("postTitle") !
     const body = formData.get("postBody")!
-    console.log(await putPost(`/posts/${postId}`,{title,body,userId:postId}))
+    const author = formData.get("postAuthor")!
+    console.log(await putPost(`/posts/${postId}`,{title,body,userId:author}))
     return redirect(`/posts/${postId}`)
 }
 export const EditRoute = {
