@@ -22,7 +22,6 @@ function FormElement({ users, posts, method }: ResponseType){
 					<Select
 						label="Author"
 						name="postAuthor"
-						id="author"
                         postId={posts?.userId}
 						options={users}
 					/>

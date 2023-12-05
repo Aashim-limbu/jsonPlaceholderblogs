@@ -3,12 +3,14 @@ import { SecondaryButton } from "./Button.secondary";
 import Inputs from "./Inputs";
 import { UserContext } from "../pages/Post";
 import { useContext } from "react";
-import Select from "./Select";
 
 export function FilterComponent() {
-	const { users, filterQuery,userId } = useContext(UserContext);
+	const { filterQuery } = useContext(UserContext);
 	return (
-		<Form method="get" className="flex items-center w-full gap-x-4  justify-between">
+		<Form
+			method="get"
+			className="flex items-center w-full gap-x-4  justify-between"
+		>
 			<Inputs
 				className="flex-1"
 				defaultValue={filterQuery}
@@ -16,7 +18,6 @@ export function FilterComponent() {
 				type="search"
 				label="Query"
 			/>
-			<Select className="flex items-center" userId={userId} label="Authors" name="filterAuthor" options={users} />
 			<SecondaryButton type="submit">Filter</SecondaryButton>
 		</Form>
 	);
